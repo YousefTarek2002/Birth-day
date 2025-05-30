@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>بسوسة بالقشطة</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: "Roboto", sans-serif;
+      background: #fefefe;
+      color: #000;
+    }
+    header {
+      background: #000;
+      color: white;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 1.5rem;
+    }
+    .menu-btn {
+      font-size: 1.5rem;
+      background: none;
+      border: none;
+      color: white;
+      cursor: pointer;
+    }
+    .sidebar {
+      position: fixed;
+      top: 0;
+      right: -250px;
+      width: 250px;
+      height: 100%;
+      background: #111;
+      color: white;
+      padding: 30px 20px;
+      transition: right 0.3s ease;
+      z-index: 1000;
+    }
+    .sidebar a {
+      display: block;
+      color: white;
+      text-decoration: none;
+      margin-bottom: 20px;
+      font-size: 1.2rem;
+    }
+    .sidebar.show {
+      right: 0;
+    }
+
+    .hero {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 60px 20px;
+      background: #f5f5f5;
+    }
+
+    .card {
+      width: 300px;
+      height: 400px;
+      border-radius: 15px;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      animation: fadeUp 0.8s forwards;
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    .overlay {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      padding: 15px;
+      background: rgba(0, 0, 0, 0.6);
+      color: white;
+      text-align: center;
+    }
+
+    .overlay h3 {
+      margin: 0;
+      font-size: 1.3rem;
+    }
+
+    @keyframes fadeUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Dega Sweets.COM</h1>
+    <button class="menu-btn" onclick="toggleSidebar()">☰</button>
+  </header>
+
+  <div class="sidebar" id="sidebar">
+    <a href="index.html">الرئيسية</a>
+    <a href="menu.html">المنيو</a>
+  </div>
+
+  <section class="hero">
+    <div class="card" style="background-image: url('4.jpg'); animation-delay: 0.2s;">
+      <div class="overlay">
+        <h3>🍯💕Ghazl elbanat</h3>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    function toggleSidebar() {
+      document.getElementById("sidebar").classList.toggle("show");
+    }
+  </script>
+</body>   
+</html>
